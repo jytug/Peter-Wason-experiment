@@ -1,0 +1,86 @@
+<!doctype html>
+<html>
+<head>
+    <meta http-equiv='cache-control' content='no-cache'>
+    <meta http-equiv='expires' content='0'>
+    <meta http-equiv='pragma' content='no-cache'>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="http://w3schools.com/lib/w3.css">
+    {% load static %}
+    <link rel="stylesheet" href="{% static "experiment/css/style.css" %}">
+    <title>Eksperyment Petera Wasona</title>
+</head>
+<body>
+    <div class="w3-row w3-large" id="welcome" style="display:none;">
+        <div class="w3-half w3-container">
+            <h2>Eksperyment Petera Wasona</h2>
+            <p id="welcome_text">Siemaneczko</p>
+        </div>
+    </div>
+
+    <div class="w3-row w3-large" id="form" style="display:none;">
+        <div class="w3-half w3-container">
+            <div class="w3-container w3-card">
+            <p>
+            <label class="w3-label"><h3>Pseudonim</h3></label>
+            <input type="text" class="w3-input" id="nick" placeholder="Podaj swój pseudonim">
+            </p>
+            <p>
+            <label class="w3-label"><h3>Płeć</h3></label>
+            <input class="w3-radio" type="radio" name="gender" id="male" value="male" checked>
+            <label class="w3-validate">Mężczyzna</label>
+            </p>
+
+            <p>
+            <input class="w3-radio" type="radio" name="gender" value="female">
+            <label class="w3-validate">Kobieta</label>
+            </p>
+
+            <p>
+            <input class="w3-radio" type="radio" name="gender" value="" disabled>
+            <label class="w3-validate">Trudno powiedzieć</label>
+            </p>
+            <p>
+            <label class="w3-label"><h3>Wiek</h3></label>
+            <input class="w3-input" id="age" type="number" name="age" value="">
+            </p>
+            <p>
+            <label class="w3-label"><h3>Tryb</h3></label>
+            <select id="mode" class="w3-select" name="mode">
+                <option value="" disabled selected>Wybierz tryb</option>
+                <option value="1">Tryb badawczy I</option>
+                <option value="2">Tryb badawczy II</option>
+                <option value="3">Tryb badawczy III</option>
+                <option value="4">Tryb pilotażowy</option>
+            </select>
+            </p>
+            </div>
+        </div>
+    </div>
+
+    <div class="w3-row w3-large" id="training_gil" style="display:none;">
+        <div class="w3-half w3-container">
+            <h2>Sesja treningowa zadania GIL</h2>
+            <p id="training_gil_text">Siemaneczko</p>
+            <p>Czas, po którym bez kliknięcia
+            pojawi się ostrzeżenie, to <span id="training_gil_time"></span> milisekund</p>
+        </div>
+    </div>
+
+    <div class="w3-row w3-large" id="measured_gil" style="display:none;">
+        <div class="w3-half w3-container">
+            <h2>Sesja pomiarowa zadania GIL</h2>
+            <p id="measured_gil_text">Siemaneczko</p>
+            <p>Czas, po którym bez kliknięcia
+            pojawi się ostrzeżenie, to <span id="measured_gil_time"></span> milisekund</p>
+        </div>
+    </div>
+    <div id="next" class="button">
+        <span>Dalej</span>
+    </div>
+</body>
+<script src="https://code.jquery.com/jquery-3.1.1.min.js"
+        integrity="sha256-hVVnYaiADRTO2PzUGmuLJr8BLUSjGIZsDYGmIJLv2b8="
+        crossorigin="anonymous"></script>
+<script src="{% static "experiment/js/experiment.js" %}"></script>
+</html>
