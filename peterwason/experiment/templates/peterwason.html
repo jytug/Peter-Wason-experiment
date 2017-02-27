@@ -1,13 +1,10 @@
-<!doctype html>
-<html>
+<!doctype html> <html>
 <head>
     <meta http-equiv='cache-control' content='no-cache'>
     <meta http-equiv='expires' content='0'>
     <meta http-equiv='pragma' content='no-cache'>
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link rel="stylesheet" href="http://w3schools.com/lib/w3.css">
-    {% load static %}
-    <link rel="stylesheet" href="{% static "experiment/css/style.css" %}">
+    <link rel="stylesheet" href="http://w3schools.com/lib/w3.css"> {% load static %} <link rel="stylesheet" href="{% static "experiment/css/style.css" %}">
     <title>Eksperyment Petera Wasona</title>
 </head>
 <body>
@@ -73,6 +70,71 @@
             <p id="measured_gil_text">Siemaneczko</p>
             <p>Czas, po którym bez kliknięcia
             pojawi się ostrzeżenie, to <span id="measured_gil_time"></span> milisekund</p>
+        </div>
+    </div>
+
+    <div class="w3-row w3-large" id="training_card" style="display:none;">
+        <div class="w3-half w3-container">
+            <h2>Sesja treningowa zadania GIL z wyborem kart</h2>
+            <p id="training_card_text" style="display:none;"
+            class="training_mode1_first training_mode2_first">
+            Siemaneczko
+            </p>
+            <hr id="training_line1" class="training_mode1_first" style="display:none;">
+            <p id="training_card_rule"
+            class="training_mode1_second training_mode2_first"
+            style="display:none;">Jeśli A, to B</p>
+            <p id="training_card_rest" class="training_mode1_second training_mode2_first"
+            style="display:none;">
+            Reszta wytłumaczenia
+            </p>
+            <hr id="training_line2" class="training_mode2_first" style="display:none;">
+            <div class="w3-row training_cards" style="display:none;">
+            <div class="w3-quarter w3-card w3-container card" id="train_card2">
+            Karta 1
+            </div>
+            <div class="w3-quarter w3-card w3-container card" id="train_card3">
+            Karta 2 
+            </div>
+            <div class="w3-quarter w3-card w3-container card" id="train_card3">
+            Karta 3 
+            </div>
+            <div class="w3-quarter w3-card w3-container card" id="train_card3">
+            Karta 4 
+            </div>
+            </div>
+        </div>
+    </div>
+    <div class="w3-row w3-large" id="measured_card" style="display:none;">
+        <div class="w3-half w3-container">
+            <h2>Sesja pomiarowa zadania GIL z wyborem kart</h2>
+            <p id="measured_card_text" style="display:none;"
+            class="measured_mode1_first measured_mode2_first">
+            Siemaneczko
+            </p>
+            <hr id="measured_line1" class="measured_mode1_first" style="display:none;">
+            <p id="measured_card_rule"
+            class="measured_mode1_second measured_mode2_first"
+            style="display:none;">Jeśli A, to B</p>
+            <p id="measured_card_rest" class="measured_mode1_second measured_mode2_first"
+            style="display:none;">
+            Reszta wytłumaczenia
+            </p>
+            <hr id="measured_line2" class="measured_mode2_first" style="display:none;">
+            <div class="w3-row measured_cards" style="display:none;">
+            <div class="w3-quarter w3-card w3-container card" id="meas_card2">
+            Karta 1
+            </div>
+            <div class="w3-quarter w3-card w3-container card" id="meas_card3">
+            Karta 2 
+            </div>
+            <div class="w3-quarter w3-card w3-container card" id="meas_card3">
+            Karta 3 
+            </div>
+            <div class="w3-quarter w3-card w3-container card" id="meas_card3">
+            Karta 4 
+            </div>
+            </div>
         </div>
     </div>
     <div id="next" class="button">

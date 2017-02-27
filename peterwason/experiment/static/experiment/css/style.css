@@ -43,3 +43,10 @@
   opacity: 1;
   right: 0;
 }
+
+.card {
+  min-height:50px;
+  padding:20px;
+  text-align:center;
+  cursor: pointer;
+}
