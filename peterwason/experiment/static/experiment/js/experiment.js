@@ -125,37 +125,46 @@ function end_training_card() {
     success: function(result) {
         tasks = JSON.parse(result);
         tasks = shuffle(tasks);         // shuffle the tasks randomly
-        $("#next").unbind("click").click(start_measured_card);
+        start_measured_card();
+        //$("#next").unbind("click").click(start_measured_card);
     }});
 }
 
 function start_measured_card() {
     $('#measured_card').toggle(400);
-    $('#next').toggle(100);
     show_task(0);
 }
 
 function show_task(i) {
+    undo_timeout();
+    $(document).unbind("contextmenu");
+    console.log("showing task " + i);
     if (i < tasks.length) {
+        $('.measured_cards').hide(20);
         $('#measured_card_text').html(tasks[i]['intro']);
         if (mode == 1) {
-            $('.measured_mode1_first').toggle(50);
+            $('.measured_mode1_second').hide(20); 
+            $('.measured_mode1_first').show(50);
         } else {
-            $('.measured_mode2_first').toggle(50);
+            $('.measured_mode2_second').hide(20); 
+            $('.measured_mode2_first').show(50);
         }
-        $('#next').unbind("click").click(function() { run_task(i) });
+        $('#next').unbind("click").click(function() { run_task(i) }).show(100);
     } else {
+        $('#measured_card').hide(10);
+        $('#bye_text').html(settings['thankYouMessage']);
+        $('#bye').show(100);
+        $('#next').hide(100);
         // koniec
     }
 }
 
 function run_task(i) {
-    console.log("running task " + i);
     lastClicks = [];
     if (mode == 1) {
-       $('.measured_mode1_second').toggle(200); 
+       $('.measured_mode1_second').show(200); 
     } else {
-       $('.measured_mode2_second').toggle(200); 
+       $('.measured_mode2_second').show(200); 
        right_clicked();
        $(document).bind("contextmenu", function(event) {
            event.preventDefault();
@@ -166,13 +175,13 @@ function run_task(i) {
            console.log(lastClicks);
        });
     }
-    $('.measured_cards').toggle(200);
-    $('.card').click(function() {
+    $('.measured_cards').show(200);
+    $('.card').removeClass("w3-black").unbind("click").click(function() {
         $(this).toggleClass("w3-black");
     });
-    // $('#next').toggle(100);
+    $('#next').hide(100);
     console.log(settings['measuredCardTime']);
-    setTimeout(show_task(i+1), settings['measuredCardTime']);
+    setTimeout(function() { show_task(i+1); }, settings['measuredCardTime']);
 }
 
 // helper functions
